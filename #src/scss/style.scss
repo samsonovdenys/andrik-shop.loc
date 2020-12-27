@@ -1,0 +1,32 @@
+@import "nullstyle.scss";
+@import "header.scss";
+
+//Fonts connection---------------------------------------------------------------------
+@font-face {
+  font-family: Play;
+  src: url(/andrik-shop.loc/fonts/play-bold-webfont.ttf);
+}
+@font-face {
+  font-family: UniSans;
+  src: url(/andrik-shop.loc/fonts/uni-sans-heavy-webfont.ttf);
+}
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700,900");
+//Variables--------------------------------------------------------------------------------
+
+$fontFamily: "Roboto";
+$minWidth: 320px;
+$maxWidth: 1400px;
+$maxWidthContainer : 1180px;
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+._container {
+  max-width: $maxWidthContainer;
+  margin: 0 auto;
+  padding: 0 20px;
+}
