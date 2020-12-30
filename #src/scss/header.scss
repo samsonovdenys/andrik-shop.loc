@@ -1,10 +1,9 @@
 
 .header {
     background: url(../img/bg-header.jpg) top no-repeat;
-    &__top {
-    }
-    &__bottom {
-    }
+    @media(max-width: $md){
+        background: url(../img/bg-header.jpg) 0 0 no-repeat;
+    }  
 }
 .top-header {
     &__content {
@@ -16,28 +15,46 @@
         flex: 0 1 50%;
         &_logo{
             align-self: flex-start;
-            padding-top: 25px;
-            flex: 0 0 190px;
+            padding-top: 10px;
+            flex: 0 0 160px;
             text-align: center;
         }
-    }
-    &__menu {
-    }
-    &__logo {
-    }
-    &__contacts {
     }
 }
 .menu {
     &__icon {
     }
     &__body {
+        @media(max-width: $lg){
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: -100%;
+            overflow: auto;
+            z-index: 2;
+            background-color: #14c0d4;
+            padding: 80px 20px 30px 20px;
+            text-transform: uppercase;
+            transition: all 0.3s ease 0s;
+            &._active {               
+                display: block;
+                left: 0; 
+            }
+        }
     }
     &__list {
         display: flex;
         flex-wrap: wrap;
         li{
             flex: 0 1 33.333%;
+            @media(max-width: $lg){
+                padding: 20px;
+            }
+        }
+        @media(max-width: $lg){
+            display: block;
+            font-size: 30px;
         }
     }
     &__link {
@@ -50,160 +67,22 @@
         justify-content: center;
         align-items: center;
         padding: 0px 22px;
-        @media  (min-width: 992px){
+        @media(min-width: $lg){
             &:hover{
                 background-color: #068292;
                 border-radius: 15px;
+                
             }
-        }
-    }
-}
-.icon-menu {
-}
-.contacts {
-    &__header {
-       display: flex; 
-       justify-content: center;
-       align-items: flex-start;
-    }
-}
-.contacts-header {  
-    
-    &__column {
-        padding: 0px 30px;
-        border-right: 1px solid #fff;
-        &:last-child{
-            border: none;
-        }
-    }
-    &__item {  
-        font-family: Roboto;
-        font-size: 12px;
-        font-weight: 300;
-        color: #fff;
-        &_icon {
-            background: url(../img/icons/header/white-phone.svg) left center no-repeat;
-            padding-left: 37px; 
-        }
-    }
-    &__label {
-        padding-bottom: 4px;
-    }
-    &__phone {
-        font-size: 18px;
-        font-weight: 900;
-        color: white;
-    }
-}
-.bottom-header {
-    &__content {
-        display: flex;
-        height: 63px;
-        align-items: center;
-        justify-content: space-between;
-    }
-    &__column {
-        flex: 0 1 calc(50%-95px);
-    }
-    &__actions {
-        
-    }
-    &__info {
-    }
-}
-.actions-header {
-    display: flex;
-    align-items: center;
-    font-family: Roboto;
-    li{
-        margin: 0px 54px 0px 0px;
-    }
-    &__login {
-        background: url(../img/icons/header/log-in.svg) 0 center no-repeat;
-        display: inline-block;
-        padding-left: 36px;
-        line-height: 24px;
-        color: #999;
-        span{
-            border-bottom: 1px dotted;
-        }
-    }
-    &__reg {
-        background: url(../img/icons/header/sign-up.svg) 0 center no-repeat;
-        display: inline-block;
-        padding-left: 32px;
-        line-height: 24px;
-        color: #1ab9ce;
-        span{
-            border-bottom: 1px dotted;
-        }
-    }
-    &__email {
-        background: url(../img/icons/header/mail.svg) 0 center no-repeat;
-        display: inline-block;
-        padding-left: 35px;
-        line-height: 13px;
-        color: #999;
-    }
-}
-.info-header {
-    display: flex;
-    font-family: Roboto;
-    justify-content: center;
-    align-items:center;
-    &__column {
-        margin-left: 50px;
-    }
-    &__callback {
-        
-        background: url(../img/icons/header/blue-phone.svg) 0 center no-repeat;
-        padding-left: 33px;
-        display: inline-block;
-        color: #1ab9ce;
-        line-height: 20px;
-        span{
-            border-bottom: dotted;
-        }
-    }
-    &__schedule {
-        background: url(../img/icons/header/schedule.svg) 0 center no-repeat;
-        padding-left: 38px;
-        display: inline-block;
-        font-size: 12px;
-        line-height: 18px;
-        color: #999;
-        span{
-            font-weight: 900;
-        }
-    }
-    &__cart {
-        background: url(../img/icons/header/cart.svg) 0 center no-repeat;
-        display: inline-block;
-        width: 43px;
-        height: 43px;
-        position: relative;
-        span{
-            position: absolute;
-            padding: 0px 11px;
-            border-radius: 15px;
-            line-height: 25px;
-            background-color: #f68038;
-            right: 0px;
-            transform: translate(75%,0px);
-            color: #fff;
-            font-weight: 700;
-            font-size: 18px;
         }
     }
 }
 //Burger
 .icon-menu{
     display: none;
-    @media (max-width: 768px) {
+    @media(max-width: $lg){
         display: block;
-        position: absolute;
-        top: 18px;
-        right: 10px;
+        position: relative;
+        right: 0px;
         width: 30px;
         height: 18px;
         cursor: pointer;
@@ -215,7 +94,7 @@
             position: absolute;
             width: 100%;
             height: 2px;
-            background-color: #000;
+            background-color: #fff;
             &:first-child {
                 top:0px;
             }
@@ -236,6 +115,166 @@
                     bottom: calc(50% - 1px);
                 }
             }
+        }
+    }
+}
+.contacts {
+    &__header {
+       display: flex; 
+       justify-content: center;
+       align-items: flex-start;
+       @media(max-width: $lg){
+            flex-direction: column;
+            align-items:center;
+        }
+    }
+}
+.contacts-header {     
+    &__column {
+        padding: 0px 30px;
+        border-right: 1px solid #fff;
+        &:last-child{
+            border: none;
+        }
+        @media(max-width: $lg){
+            border: none;
+            padding: 5px 0px;
+        }
+    }
+    &__item {  
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 300;
+        color: #fff;
+        &_icon {
+            @media(min-width: $lg+1px){
+               background: url(../img/icons/header/white-phone.svg) left center no-repeat;
+            padding-left: 37px;  
+            }   
+        }
+    }
+    &__label {
+        padding-bottom: 4px;
+    }
+    &__phone {
+        font-size: 16px;
+        font-weight: 900;
+        color: white;
+        white-space: nowrap;
+    }
+}
+.bottom-header {
+    &__content {
+        display: flex;
+        height: 63px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__column {
+        flex: 0 1 calc(50%-95px);
+    }
+}
+.actions-header {
+    display: flex;
+    align-items: center;
+    font-family: Roboto;
+    &__item{
+        margin: 0px 45px 0px 0px;
+        display: inline-block;
+        padding-left: 33px;
+        line-height: 24px;
+        color: #999;
+        white-space: nowrap;
+        @media(max-width: $lg){
+            padding-left: 3px;
+            margin: 10px;
+            background:none;
+        }
+        
+        @media(max-width: $sm){
+            margin: 5px;
+        }
+        &_login {
+            background: url(../img/icons/header/log-in.svg) 0 center no-repeat;
+            span{
+                border-bottom: 1px dotted;
+            }
+        }
+        &_reg {
+            background: url(../img/icons/header/sign-up.svg) 0 center no-repeat;
+            span{
+                border-bottom: 1px dotted;
+            }
+        }
+        &_email {
+            background: url(../img/icons/header/mail.svg) 0 center no-repeat;
+            span{
+                border-bottom: 1px solid;
+            }
+            
+        @media(max-width: $sm){
+            display: none;
+        }
+        }
+        &:hover{
+            color: #1ab9ce;
+        }
+    }   
+}
+.info-header {
+    display: flex;
+    font-family: Roboto;
+    justify-content: center;
+    align-items:center;
+    &__column {
+        margin-left: 40px;
+        @media(max-width: $sm){
+            margin: 5px;
+        }
+    }
+    &__callback {   
+        background: url(../img/icons/header/blue-phone.svg) 0 center no-repeat;
+        padding-left: 33px;
+        display: inline-block;
+        color: #999;
+        line-height: 20px;
+        span{
+            border-bottom: 1px dotted;
+        }
+    }
+    &__schedule {
+        background: url(../img/icons/header/schedule.svg) 0 center no-repeat;
+        padding-left: 33px;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 18px;
+        color: #999;
+        @media(max-width: $lg){
+            display: none;
+        }
+        span{
+            font-weight: 900;
+        }
+    }
+    &__cart {
+        background: url(../img/icons/header/cart.svg) 0 center no-repeat;
+        display: inline-block;
+        width: 43px;
+        height: 43px;
+        position: relative;
+        margin-right: 20px;
+        span{
+            position: absolute;
+            padding: 0px 8px;
+            border-radius: 10px;
+            line-height: 25px;
+            background-color: #f68038;
+            top: -3px;
+            right: 0px;
+            transform: translate(70%,0px);
+            color: #fff;
+            font-weight: 500;
+            font-size: 16px;
         }
     }
 }
