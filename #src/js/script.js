@@ -1,5 +1,6 @@
 @@include("burger.js");
 
+
 function testWebP(callback) {
     var webP = new Image();
     webP.onload = webP.onerror = function () {
@@ -16,3 +17,31 @@ testWebP(function (support) {
         document.querySelector("body").classList.add("no-webp");
     }
 });
+
+
+
+
+
+
+let menuPageBurger = document.querySelector('.menu-page__burger');
+let menuPageBody = document.querySelector('.menu-page__body');
+menuPageBurger.addEventListener("click", function (e){
+    menuPageBurger.classList.toggle('_active');
+    menuPageBody.classList.toggle('_active');
+});
+
+
+
+
+let menuParents = document.querySelectorAll('.menu-page__parent');
+
+for (let i = 0; i<menuParents.length; i++){
+
+    let menuParent = menuParents[i];
+        menuParent.addEventListener("mouseenter", function (e) {
+        menuParent.classList.add('_active');
+    });
+    menuParent.addEventListener("mouseleave", function (e){
+        menuParent.classList.remove('_active');
+    });
+};
