@@ -21,8 +21,7 @@ testWebP(function (support) {
 
 
 
-
-
+//BURGER
 let menuPageBurger = document.querySelector('.menu-page__burger');
 let menuPageBody = document.querySelector('.menu-page__body');
 menuPageBurger.addEventListener("click", function (e){
@@ -32,16 +31,14 @@ menuPageBurger.addEventListener("click", function (e){
 
 
 
-
+//MENU
 let menuParents = document.querySelectorAll('.menu-page__parent');
-
 for (let i = 0; i<menuParents.length; i++){
-
     let menuParent = menuParents[i];
         menuParent.addEventListener("mouseenter", function (e) {
         menuParent.classList.add('_active');
     });
-    menuParent.addEventListener("mouseleave", function (e){
+        menuParent.addEventListener("mouseleave", function (e){
         menuParent.classList.remove('_active');
     });
 };
