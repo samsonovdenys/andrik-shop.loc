@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="css/style.min.css" />
         <title>Gulp</title>
     </head>
-
     <body>
         @@include('_header.html', {})
         <main class="main">
@@ -229,18 +228,68 @@
                <div class="page__content">
                 <form action='#' class="page__search search-page">
                     <div class="search-page__select">
-                        <div class="search-page__title"></div>
+                        <div class="search-page__title"><span>All</span><span data-text="Selected:" class="search-page__quantity"></span></div>
                         <div class="search-page__categories categories-search">
                             <div class="categories-search__row">
                                 <div class="categories-search__column">
-                                    <ul class="categories-search__list">
-                                        <li><a href="#" class="categories-search__link"></a></li>
-                                    </ul>
+                                <ul class="categories-search__list">
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="1"><span class="checkbox__text"><span>Treadmills</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="2"><span class="checkbox__text"><span>Elliptical trainers</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="3"><span class="checkbox__text"><span>Exercise bikes</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="4"><span class="checkbox__text"><span>Rowing machines</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="5"><span class="checkbox__text"><span>Vibrating massagers</span></span></label></li>
+                                </ul>
+                                </div>
+                                <div class="categories-search__column">
+                                <ul class="categories-search__list">
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="1"><span class="checkbox__text"><span>Tennis tables</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="1"><span class="checkbox__text"><span>Basketball</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="1"><span class="checkbox__text"><span>Massage chairs</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="1"><span class="checkbox__text"><span>Massage tables</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="1"><span class="checkbox__text"><span>Strength training equipment</span></span></label></li>
+                                </ul>
+                                </div>
+                                <div class="categories-search__column">
+                                <ul class="categories-search__list">
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="1"><span class="checkbox__text"><span>Trampolines</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="1"><span class="checkbox__text"><span>Children's towns</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="1"><span class="checkbox__text"><span>Country furniture</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="1"><span class="checkbox__text"><span>Outdoor sports complexes</span></span></label></li>
+                                    <li><label class="categories-search__checkbox checkbox"><input class="checkbox__input" name="form" type="checkbox" data-error="Error" value="1"><span class="checkbox__text"><span>Accessories</span></span></label></li>
+                                </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="search-page__input">
+                        <input autocomplite="off" type="text" name="form" data-error="Error" data-value="">
+                    </div>
+                    <button type="submit" class="search-page__btn btn">Search</button>
                 </form>
+                <div class="page__slider mainslider">
+                    <div class="mainslider__body _swiper">
+                        <div class="mainslider__slide">
+                            <div class="mainslider__content content-mainslider">
+                                <div class="content-mainslider__title">
+                                    <span>EXTRA</span>sale
+                                </div>
+                                <div class="content-mainslider__text text-mainslider">
+                                    <span class="text-mainslider__text-1">Hurry up to buy</span>fitness equipment
+                                    <p class="text-mainslider__text-2">at old price</p>
+                                    before their <span class="text-mainslider__text-3">increase</span>
+                                </div>
+                                <div class="content-mainslider__footer">
+                                    <div class="content-mainslider__price">from 500$</div>
+                                    <a href="" class="content-mainslider__button"><span>More</span></a>
+                                </div>
+                            </div>
+                            <div class="mainslider__image">
+                                <img src="img/icons/main/main-slider/01.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mainslider__dotts"></div>
+                </div>
                </div>
             </div>
         </main>
